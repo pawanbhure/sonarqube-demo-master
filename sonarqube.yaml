@@ -1,0 +1,6 @@
+FROM us-central1-docker.pkg.dev/cloudbuild-390208/docker-repo/nginximage:latest
+ENV LANG en_GB.UTF-8
+ADD src ./src
+ADD pom.xml ./pom.xml
+
+RUN mvn clean install -ntp -DskipTests
